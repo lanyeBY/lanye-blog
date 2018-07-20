@@ -1,0 +1,23 @@
+<!--components/newData/newData.wxml-->
+<view class="contain">
+<!-- <view class="user__icon">
+        <image class="icon__img" src="{{ usernews.icon }}" />
+    </view>
+    <view class="contain__right">
+        <text class="name__text"> {{ usernews.name }} </text>
+        <view class="news">
+            <text class="news__time"> {{ usernews.time }} </text>
+            <text class="news__type"> {{ usernews.type }} </text>
+        </view>
+    </view> -->
+    <view class="user__icon">
+        <image class="icon__img" src="../../images/usericon.jpg" />
+    </view>
+    <view class="contain__right">
+        <text class="user__name"> Lanye </text>
+        <view class="news">
+            <text class="news__time"> 2018/07/20 17:00 </text>
+            <text class="news__type"> 发表了一篇日记。 </text>
+        </view>
+    </view>
+</view>

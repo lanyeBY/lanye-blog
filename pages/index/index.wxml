@@ -1,0 +1,34 @@
+<view class='contain'>
+  <view class="contain__background">
+    <image class='contain__bgimg' src='../../images/bgi03.jpg' />
+  </view>
+  <view class='header'>
+    <view class='user'>
+      <!-- <image class='user__icon' src='{{user.icon}}' />
+      <text class='user__name'>{{user.name}}</text> -->
+      <view class="user__icon">
+        <image class='icon__img' src='../../images/usericon.jpg' />
+      </view>
+      <view class="user__name">
+        <text class='name__text'> lanye </text>
+      </view>
+    </view>
+  </view>
+  <view class='nav' wx:for="{{ navList }}" wx:key="{{ index }}">
+    <nav-item navTitle="{{ item }}"></nav-item>
+  </view>
+  <view class='data'>
+    <text class="data__title"> -- News -- </text>
+    <!-- 插入动态自定义组件 -->
+    <new-data class="data__list"></new-data>
+    <new-data class="data__list"></new-data>
+    <new-data class="data__list"></new-data>
+    <new-data class="data__list"></new-data>
+    <new-data class="data__list"></new-data>
+    <new-data class="data__list"></new-data>
+    <new-data class="data__list"></new-data>
+    <new-data class="data__list"></new-data>
+    <new-data class="data__list"></new-data>
+    <new-data class="data__list"></new-data>
+  </view>
+</view>

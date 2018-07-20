@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/diary/diary",
+    "pages/photo/photo",
+    "pages/plan/plan",
+    "pages/setting/setting"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#000000",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/icons/index.png",
+      "selectedIconPath": "images/icons/index_selected.png"
+    },{
+      "pagePath": "pages/diary/diary",
+      "text": "日记",
+      "iconPath": "images/icons/diary.png",
+      "selectedIconPath": "images/icons/diary_selected.png"
+    },{
+      "pagePath": "pages/photo/photo",
+      "text": "相册",
+      "iconPath": "images/icons/photo.png",
+      "selectedIconPath": "images/icons/photo_selected.png"
+    },{
+      "pagePath": "pages/plan/plan",
+      "text": "计划",
+      "iconPath": "images/icons/plan.png",
+      "selectedIconPath": "images/icons/plan_selected.png"
+    },{
+      "pagePath": "pages/setting/setting",
+      "text": "个人",
+      "iconPath": "images/icons/setting.png",
+      "selectedIconPath": "images/icons/setting_selected.png"
+    }]
+  }
+}

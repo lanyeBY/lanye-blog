@@ -1,0 +1,4 @@
+<!--components/nav/nav.wxml-->
+<view class='nav'> 
+    <text class="nav__text"> {{ navTitle }} </text>
+</view>
