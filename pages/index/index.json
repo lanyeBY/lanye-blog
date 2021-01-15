@@ -1,7 +1,0 @@
-{
-    "navigationBarTitleText": "首页",
-    "usingComponents": {
-        "nav-item": "/components/navItem/navItem",
-        "new-data": "/components/newData/newData"
-    }
-}
