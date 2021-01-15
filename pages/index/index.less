@@ -1,0 +1,79 @@
+@import (reference) "../../utils/common.less";
+
+.contain{
+    width: 100%;
+    .column( center; center);
+
+    .contain__background{
+        .size( 100%; 1080rpx);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+    
+    .contain__bgimg{
+        height: 100%;
+    }
+
+    .header{
+        .size( 100%; 420rpx );
+        .center();
+    }
+
+    .user{
+        padding-top: 40rpx;
+        .column();
+        .center();
+    }
+
+    .user__icon{
+        .size( 256rpx; 256rpx );
+        border-radius: 128rpx;
+        overflow: hidden;
+    }
+
+    .icon__img{
+        .size( 100%; 100% );
+    }
+
+    .user__name{
+        .size( 256rpx; 120rpx);
+        .center();
+    }
+
+    .name__text{
+        color: #fff;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        font-size: 40rpx;
+    }
+
+    .nav{
+        height: 260rpx;
+        padding: 40rpx 141rpx;
+        box-sizing: border-box;
+        .flex( space-between );
+        flex-wrap: wrap;
+    }
+
+    .data{
+        width: 100%;
+        flex-grow: 1;
+        .column();
+        .center();        
+    }
+
+    .data__title{
+        .size( 95%; 80rpx );
+        .center();
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 50rpx;
+        border-radius: 16rpx;
+        background-color: rgba(200,200,200,0.5);
+    }
+    .data__List{
+        width: 100%;
+    }
+
+}

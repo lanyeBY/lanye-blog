@@ -1,0 +1,50 @@
+.contain {
+  width: 712rpx;
+  height: 234rpx;
+  margin-top: 30rpx;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgba(200, 200, 200, 0.5);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.contain .user__icon {
+  width: 234rpx;
+  height: 234rpx;
+  margin-right: 40rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+.contain .icon__img {
+  width: 100%;
+  height: 100%;
+}
+.contain .contain__right {
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contain .user__name {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.contain .news {
+  margin-top: 16rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.contain .news__time {
+  font-size: 30rpx;
+  color: #888;
+}
+.contain .news__type {
+  font-family: "楷体";
+  margin-top: 16rpx;
+  font-size: 40rpx;
+}
