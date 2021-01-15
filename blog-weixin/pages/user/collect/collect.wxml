@@ -1,0 +1,25 @@
+<!-- pages/user/collect/collect.wxml -->
+<view class="collect_container" style="height: {{windowHeight}}px;">
+    <page-header title="我的收藏"></page-header>
+    <swiper class="collect_swiper" circular="{{true}}" vertical="{{true}}"  wx:if="{{collectList.length != 0}}">
+        <block wx:for="{{collectList}}" wx:for-item="blog" wx:key="{{index}}">
+            <swiper-item>
+                <view class="collect_item">
+                    <view class="blog_post" style="background-color: {{bgcArray[index%5]}}">
+                        <image class="post_image" mode="aspectFill" src="{{blog.blogPostImg}}" />
+                    </view>
+                    <view class="blog_detail" data-id="{{blog.blogId}}" bind:tap="goToBlog">
+                        <text class="blog_title">{{blog.blogTitle}}</text>
+                        <text class="blog_autor">文/{{blog.userName}}</text>
+                        <view class="text_box"><text>{{blog.content}}</text></view>
+                    </view>
+                    <image class="like_icon" src="/images/icon/collect_w.png" data-blog="{{blog}}" bind:tap="dislikeBlog" />
+                    <image class="next_icon" src="/images/icon/down_w.png" />
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="empty" wx:if="{{collectList.length == 0}}">
+        空空如也o(╥﹏╥)o
+    </view>
+</view>

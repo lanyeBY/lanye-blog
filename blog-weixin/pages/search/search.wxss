@@ -1,0 +1,105 @@
+/* pages/search/search.wxss */
+.search_container{
+    width: 100%;
+    padding-top: 140rpx;
+    padding-bottom: 20rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: solid #f5f5f5 4rpx;
+}
+.search_cancel{
+    margin-top: 6rpx;
+    font-size: 34rpx;
+    color: #888;
+}
+.back_icon{
+    width: 70rpx;
+    height: 70rpx;
+}
+.search_input{
+    width: 500rpx;
+    height: 78rpx;
+    position: relative;
+}
+.search_icon{
+    width: 44rpx;
+    height: 44rpx;
+    position: absolute;
+    top: 18rpx;
+    left: 14rpx;
+}
+.search_input > input{
+    width: 100%;
+    height: 100%;
+    padding-left: 68rpx;
+    border-radius: 12rpx;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    font-size: 34rpx;
+}
+.itap_box{
+    width: 100%;
+    margin-top: 30rpx;
+    padding: 88rpx 24rpx 52rpx 24rpx;
+    background-color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.itap_title{
+    width: 440rpx;
+    height: 108rpx;
+    padding-left: 45rpx;
+    position: relative;
+    text-align: right;
+}
+.title_text_big{
+    font-size: 102rpx;
+    color: #ccc;
+    position: absolute;
+    bottom: 45rpx;
+    left: 48rpx;
+}
+.title_text_small{
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #000;
+}
+.itap_list{
+    width: 100%;
+    max-height: 408rpx;
+    margin: 70rpx 0 80rpx 0;
+    padding: 0 3rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.itap_item{
+    margin-right: 22rpx;
+    margin-bottom: 22rpx;
+    padding: 12rpx 24rpx;
+    box-sizing: border-box;
+    border-radius: 8rpx;
+    background-color: #f6f6f6;
+    font-size: 32rpx;
+}
+.choose{
+    background-color: burlywood;
+}
+.itap_done{
+    width: 100%;
+    height: 96rpx;
+    background-color: #4b4b4b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.done_text{
+    font-size: 42rpx;
+    color: #fff;
+}

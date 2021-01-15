@@ -1,0 +1,81 @@
+<!-- pages/blog/blogEdit/blogEdit.wxml -->
+<page-header title="编辑博客"></page-header>
+<view class="edit_box">
+    <image class="edit_post" mode="aspectFill" src="{{newBlog.blogPostImg ? newBlog.blogPostImg : ''}}" />
+    <view class="edit_title">
+        <input class="title_input" type="text" maxlength="12" value="{{newBlog.blogTitle}}" placeholder="输入博客标题" placeholder-class="title_placeholder" bindchange="titleChange"/>
+    </view>
+    <view class="edit_content">
+        <block wx:for="{{newBlog.content}}" wx:for-item="node" wx:key="index">
+            <block wx:if="{{node.name == 'p'}}">
+                <textarea class="{{node.attrs.class}}" auto-height style="{{node.attrs.style}}" placeholder="{{index == 0 ? '输入博客文本...' : ''}}" maxlength="-1" value="{{node.children[0].text}}" data-index="{{index}}" bindfocus="startTextareaInput" bindblur="endTextareaInput" bindlinechange="lineChange" wx:if="{{isInput[index] || node.children[0].text.length == 0}}"></textarea>
+                <view class='rich-text' style="{{('height:' + txtHeight[index] + 'px')}}"  data-index="{{index}}" bindtap="startTextareaInput" wx:else>
+                    <rich-text style="{{node.attrs.style}}" nodes="{{node.children[0].text}}"></rich-text>
+                </view>
+            </block>
+            <block wx:if="{{node.name == 'img'}}">
+                <image class="content_image" src="{{node.attrs.src}}" mode="widthFix" data-index="{{index}}" bind:tap="deleteImage"/>
+            </block>
+        </block>
+    </view>
+</view>
+<view class="operation_box">
+    <view class="edit_operation" style="height: 80rpx;">
+        <view class="operation_item" bind:tap="blogDone">完成</view>
+        <view class="operation_item" bind:tap="blogSetting">
+        设置
+        </view>
+        <view class="operation_item" bind:tap="addImageOrText">
+            <image class="operation_icon" src="/images/icon/add_b_c.png" />
+        </view>
+        <view class="operation_item" bind:tap="textSetting">
+            <image class="operation_icon" src="/images/icon/font.png" wx:if="{{!isTextSetting}}" />
+            <image class="operation_icon" src="/images/icon/keyboard.png" wx:if="{{isTextSetting}}" />
+        </view>
+    </view>
+    <view class="setting_detail" wx:if="{{isBlogSetting}}">
+        <view class="setting_detail_item" bind:tap="addPost">
+            <image class="detail_icon" src="/images/icon/post.png" />
+            海报
+        </view>
+        <view class="setting_detail_item" bind:tap="settingPermission">
+            <image class="detail_icon" src="/images/icon/permission.png" />
+            权限
+        </view>
+        <view class="setting_detail_item">
+            <picker class="setting_detail_item_picker" bindchange="settingItap" value="{{itapIndex}}" range="{{itaps}}">
+                <image class="detail_icon" src="/images/icon/itap.png" />
+                标签
+            </picker>
+        </view>
+    </view>
+    <view class="text_detail" wx:if="{{isTextSetting}}">
+        <view class="text_detail_item">
+            <image class="text_detail_icon" src="{{(textAlign == 0)?'/images/icon/align_center_c.png':'/images/icon/align_center.png'}}" data-textalign="0" bind:tap="textAlignChange" />
+            <image class="text_detail_icon" src="{{(textAlign == 1)?'/images/icon/align_justify_c.png':'/images/icon/align_justify.png'}}" data-textalign="1" bind:tap="textAlignChange" />
+            <image class="text_detail_icon" src="{{(textAlign == 2)?'/images/icon/align_left_c.png':'/images/icon/align_left.png'}}" data-textalign="2" bind:tap="textAlignChange" />
+            <image class="text_detail_icon" src="{{(textAlign == 3)?'/images/icon/align_right_c.png':'/images/icon/align_right.png'}}" data-textalign="3" bind:tap="textAlignChange" />
+        </view>
+        <view class="text_detail_item">
+            <image class="text_detail_icon" src="{{textDecoration == 0?'/images/icon/line_middle_c.png':'/images/icon/line_middle.png'}}" data-textdecoration="0" bind:tap="textDecorationChange" />
+            <image class="text_detail_icon" src="{{textDecoration == 1?'/images/icon/line_under_c.png':'/images/icon/line_under.png'}}" data-textdecoration="1" bind:tap="textDecorationChange" />
+            <image class="text_detail_icon" src="{{textDecoration == 2?'/images/icon/align_justify_c.png':'/images/icon/align_justify.png'}}" data-textdecoration="2" bind:tap="textDecorationChange" />
+        </view>
+        <view class="text_detail_item">
+            <image class="text_detail_icon" src="{{textStyle == 0?'/images/icon/title_h1_c.png':'/images/icon/title_h1.png'}}" data-textstyle="0" bind:tap="textStyleChange" />
+            <image class="text_detail_icon" src="{{textStyle == 1?'/images/icon/title_h2_c.png':'/images/icon/title_h2.png'}}" data-textstyle="1" bind:tap="textStyleChange" />
+            <image class="text_detail_icon" src="{{textStyle == 2?'/images/icon/text_indent_c.png':'/images/icon/text_indent.png'}}" data-textstyle="2" bind:tap="textStyleChange" />
+            <image class="text_detail_icon" src="{{textStyle == 3?'/images/icon/align_justify_c.png':'/images/icon/align_justify.png'}}" data-textstyle="3" bind:tap="textStyleChange" />
+        </view>
+        <view class="text_detail_item font_setting">
+            <image class="text_detail_icon" src="{{isFondBlod?'/images/icon/font_blod_c.png':'/images/icon/font_blod.png'}}" bind:tap="fontBlodChange" />
+            <image class="text_detail_icon" src="{{isFondItalic?'/images/icon/font_italic_c.png':'/images/icon/font_italic.png'}}" bind:tap="fontItalicChange" />
+            <picker range="{{fontSize}}" value="{{fontSizeIndex}}" bindchange="fontSizeChange">
+                <view>{{fontSize[fontSizeIndex]}}px</view>
+            </picker>
+            <picker range="{{fontColor}}" value="{{fontColorIndex}}" bindchange="fontColorChange">
+                <view class="font_color_box" style="background-color: {{fontColor[fontColorIndex]}}"></view>
+            </picker>
+        </view>
+    </view>
+</view>

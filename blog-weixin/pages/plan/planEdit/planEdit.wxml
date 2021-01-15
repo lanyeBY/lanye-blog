@@ -1,0 +1,19 @@
+<!-- pages/plan/planEdit/planEdit.wxml -->
+<page-header title="{{editType + '计划'}}"></page-header>
+<view class="edit_box">
+    <view class="plan_title">
+        <input class="title_input" value="{{plan.planTitle}}" maxlength="12" bindblur="titleChange" bindconfirm="titleChange" />
+    </view>
+    <view class="plan_text" style="height: {{pageHeight - 200}}px">
+        <view class="text_input_view">{{plan.content}}</view>
+        <textarea class="text_input" value="{{plan.content}}" maxlength="-1" bindblur="textChange" bindconfirm="textChange"></textarea>
+    </view>
+</view>
+<view class="plan_operate">
+    <view class="plan_finnish" bind:tap="editFinnish">完成</view>
+    <view class="plan_alert">
+        <picker mode="date" value="{{plan.alertTime}}" start="{{today}}" end="{{endDay}}" bind:change="dateChange">
+            添加提醒
+        </picker>
+    </view>
+</view>

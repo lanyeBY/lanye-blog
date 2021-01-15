@@ -1,0 +1,49 @@
+<!-- pages/plan/plans/plans.wxml -->
+<module-header>
+    <view class="header_slot">
+        <view class="plans_state">
+            <picker bindchange="stateChoose" value="{{stateIndex}}" range="{{planStates}}">
+                <view class="state_text">{{planStates[stateIndex]}}</view>
+            </picker>
+        </view>
+        <view class="header_bottom">
+            <image class="month_icon" src="/images/icon/left_w.png" bind:tap="lastmonth" />
+            <view class="plans_date">
+                <picker class="date_text" mode="multiSelector" bindchange="dateChoose" bindcolumnchange="columnChoose" value="{{DateIndex}}" range="{{dates}}">
+                    {{dates[0][DateIndex[0]]}}\t{{dates[1][DateIndex[1]]}}
+                </picker>
+            </view>
+            <image class="month_icon" src="/images/icon/right_w.png" bind:tap="nextmonth" />
+        </view>
+    </view>
+</module-header>
+<view class="plan_list" wx:if="{{monthList.length > 0}}">
+    <view class="plan_list_item" wx:for="{{monthList}}" wx:key="{{index}}" wx:for-item="monthItem" wx:if="{{monthItem.list.length > 0}}">
+        <view class="list_day">{{monthItem.date}}th</view>
+        <scroll-view class="plan_list_day" scroll-x="true">
+            <view class="plan_item" wx:for="{{monthItem.list}}" wx:key="{{plan.planId}}" wx:for-item="plan" bind:tap="goToPlan" data-planid="{{plan.planId}}">
+                <view class="plan_top">
+                    <view class="plan_title">
+                        {{plan.planTitle}}
+                        <view class="plan_status" style="background-color: {{plan.status == 0 ? 'skyblue' : 'lightgreen'}}">
+                            {{plan.status == 0 ? '未完成' :'已完成'}}
+                        </view>
+                    </view>
+                    <view class="plan_content">{{plan.content}}</view>
+                </view>
+                <view class="plan_bottom">{{plan.isAlert ? "提醒时间：" + plan.alertTime : "不提醒"}}\n</view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+<view class="plan_empty" wx:else>空空如也o(╥﹏╥)o</view>
+<view class="bottom_nav">
+    <view class="nav_item" bind:tap="goToHome">
+        <image class="nav_item_icon" src="/images/icon/home.png" />
+        <view class="nav_item_title">返回首页</view>
+    </view>
+    <view class="nav_item" bind:tap="addNewPlan">
+        <image class="nav_item_icon" src="/images/icon/plan_add.png" />
+        <view class="nav_item_title">创建计划</view>
+    </view>
+</view>

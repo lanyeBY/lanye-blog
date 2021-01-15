@@ -1,0 +1,78 @@
+/* pages/user/collect/collect.wxss */
+.collect_container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.collect_swiper {
+    width: 100%;
+    height: 1214rpx;
+    flex-grow: 1;
+}
+.collect_item {
+    width: 100%;
+    height: 100%;
+    padding-top: 400rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+.blog_post {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+.post_image {
+    width: 100%;
+    height: 100%;
+}
+.blog_detail {
+    padding: 0 140rpx 0 64rpx;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    font-size: 32rpx;
+    letter-spacing: 0.2em;
+    color: #fff;
+}
+.blog_title {
+    display: block;
+    margin-bottom: 70rpx;
+    font-size: 78rpx;
+    overflow: hidden;    
+    text-overflow: ellipsis;    
+    white-space: nowrap;
+}
+.text_box {
+    margin-top: 28rpx;
+    line-height: 1.6em;
+    display: -webkit-box;    
+    -webkit-box-orient: vertical;    
+    -webkit-line-clamp: 4;    
+    overflow: hidden;
+}
+.blog_like {
+    width: 100%;
+    height: 64rpx;
+    margin-top: 116rpx;
+    padding-right: 50rpx;
+    box-sizing: border-box;
+}
+.like_icon {
+    width: 78rpx;
+    height: 78rpx;
+    position: absolute;
+    bottom: 200rpx;
+    right: 100rpx;
+}
+.next_icon {
+    width: 44rpx;
+    height: 44rpx;
+    position: absolute;
+    bottom: 50rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+}

@@ -1,0 +1,16 @@
+<!-- pages/plan/planRead/planRead.wxml -->
+<page-header title="查看计划"></page-header>
+<view class="read_box">
+    <view class="plan_top">
+        {{plan.planTitle}}
+        <view class="plan_status" style="background-color: {{plan.status == 0 ? 'lightblue' : 'lightgreen'}}" bind:tap="statusChange">
+            {{plan.status == 0 ? '未完成' :'已完成'}}
+        </view>
+    </view>
+    <view class="plan_createtime">{{plan.createTime}}</view>
+    <view class="plan_text"><text>{{plan.content}}</text></view>
+</view>
+<view class="plan_operate">
+    <view class="plan_edit" bind:tap="planEdit">编辑</view>
+    <view class="plan_delete" bind:tap="planDelete">删除</view>
+</view>

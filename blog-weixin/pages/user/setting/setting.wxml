@@ -1,0 +1,25 @@
+<!--pages/user/setting/setting.wxml-->
+<view class="setting_container" style="height: {{windowHeight}}px;">
+    <page-header title="设置"></page-header>
+    <view class="setting_detail">
+        <view class="setting_item head">
+            <text class="setting_text">头像</text>
+            <view class="head_box">
+                <image class="head_image" src="{{user.headImg}}" />
+            </view>
+        </view>
+        <view class="setting_item name">
+            <text class="setting_text">名字</text>
+            <text class="name_text" wx:if="{{!isChangeName}}" bind:tap="changeNameTap">{{user.userName}}</text>
+            <input class="name_input" focus="{{true}}" value="{{user.userName}}" wx:if="{{isChangeName}}" bindblur="changeName"/>
+        </view>
+        <view class="setting_item introduction">
+            <text class="setting_text">个人介绍</text>
+            <text class="introduction_text" wx:if="{{!isChangeDec}}" bind:tap="changeDecTap">{{user.motto}}</text>
+            <textarea class="introduction_input" focus="{{true}}" value="{{user.motto}}" wx:if="{{isChangeDec}}" bindblur="changeDec"/>
+        </view>
+        <view class="setting_item confirm_button" bind:tap="settingConfirm">
+            保存
+        </view>
+    </view>
+</view>

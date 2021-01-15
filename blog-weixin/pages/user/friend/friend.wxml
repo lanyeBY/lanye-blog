@@ -1,0 +1,15 @@
+<!-- pages/user/friend/friend.wxml -->
+<page-header title="特别关心"></page-header>
+<view class="friend_list" wx:if="{{friendList.length != 0}}">
+    <view class="friend_item" wx:for="{{friendList}}" wx:for-item="friend" wx:key="{{friend.userId}}">
+        <image class="friend_header" src="{{friend.headImg}}" />
+        <view class="information" data-id="{{friend.userId}}" bind:tap="goToFriend">
+            <text class="friend_name">{{friend.userName}}</text>
+            <text class="friend_intro">{{friend.motto}}</text>
+        </view>
+        <image class="like" src="/images/icon/collect.png" data-friend="{{friend}}" bind:tap="dislikeFriend" />
+    </view>
+</view>
+<view class="empty" wx:if="{{friendList.length == 0}}">
+    空空如也o(╥﹏╥)o
+</view>

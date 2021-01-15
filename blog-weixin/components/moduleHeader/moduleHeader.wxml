@@ -1,0 +1,9 @@
+<!--components/modulePage/pageHeader/pageHeader.wxml-->
+  <view class="module_header">
+    <view class="header_bg">
+        <view class="bgi_op"></view>
+        <image class="bg_image" lazy-load="{{true}}" src="{{headerBgi}}"> </image>
+    </view>
+    <image class="back_icon" src="/images/icon/back_w.png" bind:tap="goBack" />
+    <slot></slot>
+  </view>

@@ -1,0 +1,23 @@
+{
+	"pages": [
+		"pages/home/home",
+		"pages/search/search",
+		"pages/user/user",
+		"pages/plan/plans/plans",
+		"pages/plan/planEdit/planEdit",
+		"pages/plan/planRead/planRead",
+		"pages/user/friend/friend",
+		"pages/user/collect/collect",
+		"pages/user/setting/setting",
+		"pages/blog/blogs",
+		"pages/blog/blogRead/blogRead",
+		"pages/blog/blogEdit/blogEdit"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTextStyle": "black",
+		"navigationStyle": "custom"
+	},
+	"sitemapLocation": "sitemap.json"
+}

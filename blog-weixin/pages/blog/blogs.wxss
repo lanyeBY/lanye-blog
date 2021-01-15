@@ -1,0 +1,129 @@
+/* pages/blog/blogs.wxss */
+.username{
+    width: auto;
+    height: auto;
+    position: absolute;
+    bottom: 20rpx;
+    right: 20rpx;
+    opacity: 1;
+}
+.name_text{
+    font-size: 72rpx;
+    color: #fff;
+}
+.blogs_container {
+    margin-top: 40rpx;
+}
+.blog_edit {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+}
+.today {
+    width: 120rpx;
+    height: 100rpx;
+    padding-left: 10rpx;
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.today_day {
+    font-size: 48rpx;
+    color: #959595;
+}
+.today_mon {
+    font-size: 30rpx;
+    color: #a2a2a2;
+}
+.edit_button {
+    width: 600rpx;
+    height: 100%;
+    padding: 0 26rpx;
+    border: 1rpx solid #ebebeb;
+    border-radius: 12rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 32rpx;
+    color: #b3b3b3;
+}
+.edit_icon {
+    width: 56rpx;
+    height: 56rpx;
+}
+.blog_list {
+    width: 100%;
+}
+.blog_item {
+    width: 100%;
+    margin-top: 40rpx;
+    display: flex;
+}
+.blog_date {
+    width: 120rpx;
+    height: 114rpx;
+    border-left: 10rpx solid #ffc900;
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.date_day {
+    font-size: 56rpx;
+}
+.date_mon {
+    font-size: 30rpx;
+    color: #a2a2a2;
+}
+.blog_box {
+    width: 600rpx;
+    min-height: 252rpx;
+    padding: 26rpx;
+    border: 1rpx solid #ebebeb;
+    border-radius: 12rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.blog_with_post {
+    position: relative;
+}
+.blog_post {
+    width: 600rpx;
+    height: 300rpx;
+    margin-left: -26rpx;
+    margin-top: -26rpx;
+}
+.blog_title {
+    margin-bottom: 24rpx;
+    font-size: 46rpx;
+    letter-spacing: 0.1em;
+}
+.blog_with_post > .blog_title {
+    position: absolute;
+    top: 26rpx;
+    left: 0;
+    z-index: 10;
+    font-size: 50rpx;
+    color: #fff;
+}
+.blog_with_post > .blog_text {
+    font-size: 30rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.blog_no_post > .blog_text {
+    font-size: 30rpx;
+    line-height: 1.5em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.blog_time {
+    margin-top: 24rpx;
+    font-size: 32rpx;
+}

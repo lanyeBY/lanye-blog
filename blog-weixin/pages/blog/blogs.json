@@ -1,0 +1,6 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "module-header": "/components/moduleHeader/moduleHeader"
+  }
+}

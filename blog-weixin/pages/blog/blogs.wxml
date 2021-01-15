@@ -1,0 +1,38 @@
+<!-- pages/blog/blogs.wxml -->
+<module-header>
+    <view class="username">
+        <text class="name_text">{{user.userName}}</text>
+    </view>
+</module-header>
+<view class="blogs_container">
+    <view class="blog_edit" wx:if="{{isOwner}}">
+        <view class="today">
+            <text class="today_day">{{today.day}}</text>
+            <text class="today_mon">{{today.month}}</text>
+        </view>
+        <view class="edit_button" bind:tap="addNewBlog">
+            记录下你的点滴...
+            <image class="edit_icon" src="/images/icon/edit_g.png" />
+        </view>
+    </view>
+    <view class="blog_list">
+        <view class="blog_item" wx:for="{{blogList}}" wx:for-item="blog" wx:key="{{blog.blogId}}" data-id="{{blog.blogId}}" bind:tap="goToBlog">
+            <view class="blog_date">
+                <text class="date_day">{{blog.date.day}}</text>
+                <text class="date_mon">{{blog.date.month}}</text>
+            </view>
+            <view class="blog_box">
+                <view class="blog_with_post" wx:if="{{blog.blogPostImg}}">
+                    <image class="blog_post" mode="aspectFill" src="{{blog.blogPostImg}}" />
+                    <view class="blog_title">{{blog.blogTitle}}</view>
+                    <view class="blog_text">{{blog.content}}</view>
+                </view>
+                <view class="blog_no_post" wx:else>
+                    <view class="blog_title">{{blog.blogTitle}}</view>
+                    <view class="blog_text">{{blog.content}}</view>
+                </view>
+                <view class="blog_time">{{blog.time}}</view>
+            </view>
+        </view>
+    </view>
+</view>

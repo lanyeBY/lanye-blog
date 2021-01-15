@@ -1,0 +1,53 @@
+<!-- pages/user/user.wxml -->
+<view class="show_bighead" wx:if="{{isShowHeadDetail}}" bind:tap="hideHeadDetail">
+    <image class="bighead_box" mode="widthFix" src="{{user.headImg}}" />
+</view>
+<view class="header">
+    <image class="back_icon" mode="widthFix" src="../../images/icon/back_w.png" bind:tap="goBack" />
+    <image class="header_bgi" mode="aspectFill" src="../../images/001.jpg" bind:tap="postChange" />
+</view>
+<view class="user">
+    <view class="user_head_box">
+        <image class="user_head" src="{{user.headImg}}" />
+    </view>
+    <view class="user_information">
+        <view class="user_name">{{user.userName}}</view>
+        <view class="user_dec">{{user.motto}}</view>
+    </view>
+</view>
+<view class="nav_list" wx:if="{{!isShowNav}}">
+    <view class="nav_item" bind:tap="goToBlog">
+        <image class="nav_icon" src="../../images/icon/blog.png" />
+        查看全部博客
+    </view>
+    <view class="nav_item" bind:tap="deleteFriend" wx:if="{{isLikeFriend}}">
+        <image class="nav_icon" src="../../images/icon/friend.png" />
+        取消关注
+    </view>
+    <view class="nav_item" bind:tap="addFriend" wx:else>
+        <image class="nav_icon" src="../../images/icon/friend.png" />
+        关注他/她
+    </view>
+</view>
+<view class="nav_list" wx:else>
+    <view class="nav_item" bind:tap="goToBlog">
+        <image class="nav_icon" src="../../images/icon/blog.png" />
+        查看全部博客
+    </view>
+    <view class="nav_item" bind:tap="goToPlan">
+        <image class="nav_icon" src="../../images/icon/plan.png" />
+        查看全部计划
+    </view>
+    <view class="nav_item" bind:tap="goToFriend">
+        <image class="nav_icon" src="../../images/icon/friend.png" />
+        好友
+    </view>
+    <view class="nav_item" bind:tap="goToCollect">
+        <image class="nav_icon" src="../../images/icon/collect.png" />
+        收藏
+    </view>
+    <view class="nav_item" bind:tap="goToSetting">
+        <image class="nav_icon" src="../../images/icon/setting.png" />
+        设置
+    </view>
+</view>

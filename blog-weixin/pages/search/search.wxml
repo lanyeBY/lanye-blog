@@ -1,0 +1,25 @@
+<!-- pages/search/search.wxml -->
+<view class="search_container">
+    <view class="search_back" bind:tap="backTap">
+        <image class="back_icon" src="../../images/icon/back.png" />
+    </view>
+    <view class="search_input">
+        <image class="search_icon" src="../../images/icon/search_g.png" />
+        <input type="text" value="{{searchValue}}" placeholder="搜索" placeholder-style="font-size: 34rpx;" confirm-type="search" bind:confirm="searchConfirm" />
+    </view>
+    <view class="search_cancel" bind:tap="inputCancel">取消</view>
+</view>
+<view class="itap_box">
+    <view class="itap_title">
+        <text class="title_text_big">Or</text>
+        <text class="title_text_small">选择你的兴趣标签\n我们将为你推荐有趣的文章</text>
+    </view>
+    <view class="itap_list">
+        <view wx:for="{{interestList}}" wx:key="{{index}}" class="itap_item {{item.isChoose ? 'choose' : ''}}" data-index="{{index}}" bind:tap="interestTap">
+            {{item.itap}}
+        </view>
+    </view>
+    <view class="itap_done" bind:tap="chooseDone">
+        <text class="done_text">搜索</text>
+    </view>
+</view>

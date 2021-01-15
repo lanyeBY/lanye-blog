@@ -1,0 +1,38 @@
+/* pages/user/friend/friend.wxss */
+.friend_item {
+    width: 100%;
+    height: 120rpx;
+    margin: 40rpx 0;
+    padding: 0 40rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+.friend_header {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50rpx;
+    overflow: hidden;
+}
+.information {
+    height: 100%;
+    margin-left: 12rpx;
+    padding-top: 6rpx;
+    box-sizing: border-box;
+    flex-grow: 1;
+    overflow: hidden;
+}
+.friend_name {
+    margin-bottom: 8rpx;
+    display: block;
+    font-size: 42rpx;
+}
+.friend_intro {
+    display: block;
+    font-size: 26rpx;
+    color: #999;
+}
+.like {
+    width: 72rpx;
+    height: 72rpx;
+}

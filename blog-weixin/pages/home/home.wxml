@@ -1,0 +1,76 @@
+<!-- pages/home/home.wxml -->
+<view class="get_user_info" wx:if="{{!HasGetUserInfo}}">
+    <view class="get_user_info_box">
+        需要获取您的基本信息~
+        <button type="primary" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">确认</button>
+    </view>
+</view>
+<view class="header">
+    <view class="header_top">
+        <image class="user_icon" mode="scaleToFill" bind:tap="userTap" src="{{user.headImg}}" />
+        <image class="blog_icon" src="../../images/blogIcon.png" />
+    </view>
+    <view class="header_nav">
+        <view class="nav_item" data-index="0" bind:tap="navTap">
+            <text class="nav_text">特别关心</text>
+            <view class="nav_choose" wx:if="{{!isShowSearch}}"></view>
+        </view>
+        <view class="nav_item" data-index="1" bind:tap="navTap">
+            <text class="nav_text">真是有趣</text>
+            <view class="nav_choose" wx:if="{{isShowSearch}}"></view>
+        </view>
+    </view>
+</view>
+<view class="float_list">
+    <view class="totop" wx:if="{{isShowTOP}}" bind:tap="totoptap">
+        <image class="icon_contain" src="../../images/icon/totop.png" />
+    </view>
+    <view class="search" wx:if="{{isShowSearch}}" bind:tap="searchtap">
+        <image class="icon_contain" src="../../images/icon/search_w.png" />
+    </view>
+    <view class="addNew" bind:tap="addTap">
+        <image class="icon_contain" src="../../images/icon/add.png" />
+        <view wx:if="{{isShowSon}}">
+            <view class="son_blog">
+                <image class="addNew_son" catch:tap="addblogTap" src="../../images/icon/blogicon.png" />
+            </view>
+            <view class="son_plan">
+                <image class="addNew_son" catch:tap="addplanTap" src="../../images/icon/planicon.png" />
+            </view>
+        </view>
+    </view>
+</view>
+<view class="blog_list" wx:if="{{blogList.length > 0}}">
+    <view class="blog_item" bind:tap="blogTap" data-id="{{blog.blogId}}" wx:for="{{blogList}}" wx:for-item="blog" wx:key="blog.blogId">
+        <view class="blog_image" wx:if="{{blog.blogPostImg}}">
+            <image mode="aspectFill" src="{{blog.blogPostImg}}" />
+        </view>
+        <view class="blog_intro">
+            <view class="blog_title">
+                <text class="title_text">{{blog.blogTitle}}</text>
+            </view>
+            <view class="blog_content">
+                <text class="content_text">{{blog.content}}</text>
+            </view>
+            <view class="blog_bottom">
+                <view class="blog_autor" data-id="{{blog.userId}}" catch:tap="autorTap">
+                    <view class="autor_head">
+                        <image src="{{blog.headImg}}" />
+                    </view>
+                    <view class="autor_name">
+                        <text class="name_text">{{blog.userName}}</text>
+                    </view>
+                </view>
+                <view class="blog_date">
+                    <text class="date_text">{{blog.createTime}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="load" wx:if="{{isLoad}}">
+    正在努力加载(๑＞︶＜)و
+</view>
+<view class="blog_empty" wx:if="{{!isLoad && blogList.length == 0}}">
+    空空如也o(╥﹏╥)o
+</view>

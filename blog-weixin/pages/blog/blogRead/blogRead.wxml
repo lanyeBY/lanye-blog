@@ -1,0 +1,59 @@
+<!-- pages/blog/blogRead/blogRead.wxml -->
+<page-header title="博客详情"></page-header>
+<view class="blog_read">
+    <view class="blog">
+        <view class="blog_with_post" wx:if="{{blog.blogPostImg}}">
+            <view class="blog_post_background"></view>
+            <view class="blog_post">
+                <image class="post_img" mode="aspectFill" src="{{blog.blogPostImg}}" />
+            </view>
+            <view class="blog_date_title">
+                <view class="blog_date">
+                    <view class="date_day">{{blogDate.day}}</view>
+                    <view class="date_year_mon">{{blogDate.year}} {{blogDate.mon}}</view>
+                </view>
+                <view class="blog_title">{{blog.blogTitle}}</view>
+            </view>
+        </view>
+        <view class="blog_no_post" wx:else>
+            <view class="blog_title_no_post">{{blog.blogTitle}}</view>
+            <view class="blog_date_time">{{blogDate.mon}} {{blogDate.day}}, {{blogDate.year}}  {{blogDate.time}}</view>
+        </view>
+        <view class="blog_text">
+            <rich-text nodes="{{blog.content}}"></rich-text>
+        </view>
+    </view>
+    <view class="blog_autor">
+        <view class="autor_head" data-id="{{blogAutor.userId}}" bind:tap="goToUser">
+            <image class="head_img" src="{{blogAutor.headImg}}" />
+        </view>
+        <view class="autor_name">{{blogAutor.userName}}</view>
+        <view class="autor_dec">{{blogAutor.motto}}</view>
+    </view>
+</view>
+<view class="blog_operation">
+    <view class="user" data-id="{{user.userId}}" catch:tap="goToUser">
+        <view class="user_head">
+            <image class="head_img" src="{{user.headImg}}" />
+        </view>
+        <view class="user_name">{{user.userName}}</view>
+    </view>
+    <view class="operation_list">
+        <view class="operation_box" catch:tap="praiseBlog">
+            <image class="operation_icon" src="/images/icon/praise.png" />
+            {{blog.likeNumber}}
+        </view>
+        <view class="operation_box" catch:tap="collectBlog">
+            <image class="operation_icon" src="/images/icon/collect.png" />
+            {{blog.collectNumber}}
+        </view>
+        <button open-type="share" class="operation_box">
+            <image class="operation_icon" src="/images/icon/share.png" />
+            分享
+        </button>
+        <view class="operation_box" wx:if="{{user.userId == blogAutor.userId}}" catch:tap="settingBlog">
+            <image class="operation_icon" src="/images/icon/setting.png" />
+            管理
+        </view>
+    </view>
+</view>

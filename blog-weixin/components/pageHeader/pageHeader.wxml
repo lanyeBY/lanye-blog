@@ -1,0 +1,5 @@
+<!-- components/header/header.wxml -->
+<view class="page_header">
+    <image class="back_icon" src="../../images/icon/left_g.png" bind:tap="goBack" />
+    {{title}}
+</view>

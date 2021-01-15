@@ -1,0 +1,173 @@
+/* pages/blog/blogRead/blogRead.wxss */
+page-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 12;
+}
+.blog_read {
+    margin-top: 140rpx;
+}
+.blog {
+    width: 100%;
+    padding: 60rpx 0; 
+    box-sizing: border-box;
+}
+.blog_with_post {
+    margin-bottom: 48rpx;
+    position: relative;
+}
+.blog_post {
+    width: 100%;
+}
+.post_img {
+    width: 100%;
+    height: 1100rpx;
+    margin-top: -60rpx;
+}
+.blog_post_background {
+    width: 100%;
+    height: 1100rpx;
+    position: absolute;
+    left: 0;
+    top: -60rpx;
+    z-index: 8;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.blog_date_title {
+    position: absolute;
+    left: 64rpx;
+    bottom: 136rpx;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+.blog_date {
+    margin-bottom: 40rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.date_day {
+    font-size: 84rpx;
+    line-height: 1.4em;
+}
+.date_year_mon {
+    font-size: 30rpx;
+}
+.blog_title {
+    font-size: 52rpx;
+    letter-spacing: 0.1em;
+}
+.blog_no_post {
+    margin-bottom: 80rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.blog_title_no_post {
+    margin-bottom: 20rpx;
+    font-size: 64rpx;
+}
+.blog_date_time {
+    font-size: 30rpx;
+    color: #555;
+}
+.blog_text {
+    padding: 0 36rpx;
+}
+.blog_autor {
+    width: 100%;
+    min-height: 600rpx;
+    padding: 192rpx 40rpx;
+    padding-top: 100rpx;
+    border-bottom: 2rpx solid #ddd;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+.autor_head {
+    width: 144rpx;
+    height: 144rpx;
+    border-radius: 72rpx;
+    overflow: hidden;
+}
+.head_img {
+    width: 100%;
+    height: 100%;
+}
+.autor_name {
+    font-size: 40rpx;
+}
+.autor_dec {
+    margin: 0 158rpx;
+    font-size: 28rpx;
+    text-align: center;
+}
+.blog_operation {
+    width: 100%;
+    height: 112rpx;
+    margin: 0 24rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 12;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+}
+.user {
+    width: 136rpx;
+    height: 180rpx;
+    margin-right: 24rpx;
+    margin-top: -68rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.user_head {
+    width: 136rpx;
+    height: 136rpx;
+}
+.head_img {
+    width: 100%;
+    height: 100%;
+}
+.user_name {
+    width: 100%;
+    height: 44rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22rpx;
+}
+.operation_list {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.operation_box {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 22rpx;
+    color: #888;
+}
+button.operation_box {
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+    background-color: inherit;
+}
+.operation_icon {
+    width: 50rpx;
+    height: 50rpx;
+}

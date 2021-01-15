@@ -1,0 +1,126 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wxdec14aad4012f466",
+	"projectname": "lanye-blog",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 6,
+			"list": [
+				{
+					"id": -1,
+					"name": "搜索页",
+					"pathName": "pages/search/search",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "全部计划",
+					"pathName": "pages/plan/plans/plans",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "计划编辑",
+					"pathName": "pages/plan/planEdit/planEdit",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "特别关心",
+					"pathName": "pages/user/friend/friend",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人收藏",
+					"pathName": "pages/user/collect/collect",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "设置页",
+					"pathName": "pages/user/setting/setting",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "博客列表",
+					"pathName": "pages/blog/blogs",
+					"query": "userId=o2BQ-5TmB8_IZUUvFOhzCppA4gq4&userName=小仙男、&isOwner=true",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "博客阅读",
+					"pathName": "pages/blog/blogRead/blogRead",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/user/user",
+					"query": "userId=1000",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "查看计划",
+					"pathName": "pages/plan/planRead/planRead",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "博客编辑",
+					"pathName": "pages/blog/blogEdit/blogEdit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "博客编辑",
+					"pathName": "pages/blog/blogEdit/blogEdit",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}
